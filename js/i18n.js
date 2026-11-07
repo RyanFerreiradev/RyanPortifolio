@@ -1,12 +1,3 @@
-/* =========================================================
-   Idiomas (PT / EN)
-
-   Como o idioma é escolhido, em ordem de prioridade:
-   1. Escolha manual do visitante (botão no cabeçalho), salva no navegador.
-   2. País do visitante, descoberto pela API pública https://api.country.is
-      -> Brasil e países de língua portuguesa = PT; qualquer outro = EN.
-   3. Se a API falhar ou demorar, usa o fuso horário e o idioma do navegador.
-   ========================================================= */
 
 const TRANSLATIONS = {
     pt: {
@@ -93,8 +84,6 @@ const TRANSLATIONS = {
         'footer.top': 'Back to top'
     }
 };
-
-/* Países onde o português é a língua oficial: mantêm o site em PT */
 const PT_COUNTRIES = ['BR', 'PT', 'AO', 'MZ', 'CV', 'GW', 'ST', 'TL'];
 
 const BRAZIL_TIMEZONES = [
@@ -109,7 +98,7 @@ const LANG_STORAGE_KEY = 'portfolio-lang';
 const COUNTRY_API = 'https://api.country.is/';
 const COUNTRY_API_TIMEOUT = 2500; // ms
 
-/* ---------- Armazenamento seguro (pode falhar em modo privado) ---------- */
+
 function readStorage(key) {
     try { return localStorage.getItem(key); } catch { return null; }
 }
@@ -118,7 +107,7 @@ function writeStorage(key, value) {
     try { localStorage.setItem(key, value); } catch { /* ignora */ }
 }
 
-/* ---------- Detecção de idioma ---------- */
+
 function guessLangFromBrowser() {
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
     const lang = (navigator.language || '').toLowerCase();
@@ -140,13 +129,13 @@ async function detectLangFromCountry() {
 
         return PT_COUNTRIES.includes(country) ? 'pt' : 'en';
     } catch {
-        return null; // sem rede, bloqueado ou lento: usa o palpite do navegador
+        return null; 
     } finally {
         clearTimeout(timer);
     }
 }
 
-/* ---------- Aplicação das traduções ---------- */
+
 let currentLang = 'pt';
 
 function t(key, vars = {}) {
@@ -177,23 +166,23 @@ function applyLanguage(lang) {
         el.setAttribute('aria-label', t('projects.progress', { n: el.dataset.progress }));
     });
 
-    // O botão mostra o idioma para o qual o visitante pode trocar
+    
     document.querySelector('#lang-label').textContent = lang === 'pt' ? 'EN' : 'PT';
 
     document.dispatchEvent(new CustomEvent('languagechange', { detail: { lang } }));
 }
 
-/* ---------- Inicialização ---------- */
+
 async function initLanguage() {
     const saved = readStorage(LANG_STORAGE_KEY);
 
-    // 1) Escolha manual anterior tem prioridade total
+    
     if (saved === 'pt' || saved === 'en') {
         applyLanguage(saved);
         return;
     }
 
-    // 2) Palpite imediato (evita esperar a rede) e depois refina com a API
+    
     applyLanguage(guessLangFromBrowser());
 
     const detected = await detectLangFromCountry();

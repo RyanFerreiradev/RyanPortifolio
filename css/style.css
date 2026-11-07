@@ -1,15 +1,13 @@
-/* =========================================================
-   Variáveis
-   ========================================================= */
+
 :root {
-    --accent: #6410c9;          /* roxo principal (botões, blocos, barras) */
-    --accent-text: #6410c9;     /* roxo usado em textos e ícones sobre fundo branco */
-    --accent-light: #b184f5;    /* tom claro do roxo, para texto sobre áreas pretas */
+    --accent: #6410c9;          
+    --accent-text: #6410c9;     
+    --accent-light: #b184f5;    
     --black: #000000;
     --white: #ffffff;
-    --bg: #ffffff;              /* fundo da página */
-    --text: #000000;            /* texto principal */
-    --surface: #f6f2fc;         /* branco com um leve tom de roxo (cards e seções) */
+    --bg: #ffffff;              
+    --text: #000000;            
+    --surface: #f6f2fc;         
     --muted: rgba(0, 0, 0, .65);
     --line: rgba(0, 0, 0, .14);
 
@@ -19,9 +17,6 @@
     --ease: .3s ease;
 }
 
-/* =========================================================
-   Base
-   ========================================================= */
 *,
 *::before,
 *::after {
@@ -60,9 +55,6 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 
 section { padding: 112px 0; }
 
-/* =========================================================
-   Componentes reutilizáveis
-   ========================================================= */
 .section-head { text-align: center; margin-bottom: 56px; }
 
 .eyebrow {
@@ -93,7 +85,6 @@ section { padding: 112px 0; }
     font-weight: 600;
 }
 
-/* Botões */
 .btn {
     display: inline-block;
     padding: 13px 30px;
@@ -131,9 +122,6 @@ section { padding: 112px 0; }
     color: var(--white);
 }
 
-/* =========================================================
-   Header
-   ========================================================= */
 .header {
     position: fixed;
     inset: 0 0 auto 0;
@@ -187,7 +175,6 @@ section { padding: 112px 0; }
 
 .header-actions { display: flex; align-items: center; gap: 12px; }
 
-/* Botão de idioma */
 .lang-btn {
     display: inline-flex;
     align-items: center;
@@ -218,9 +205,6 @@ section { padding: 112px 0; }
     line-height: 1;
 }
 
-/* =========================================================
-   Home
-   ========================================================= */
 .home {
     min-height: 100vh;
     display: flex;
@@ -257,7 +241,6 @@ section { padding: 112px 0; }
 
 .actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
-/* Cartão de código decorativo */
 .home-visual {
     position: relative;
     justify-self: center;
@@ -303,9 +286,6 @@ section { padding: 112px 0; }
 .c-key { color: var(--accent-light); }
 .c-str { color: #dcc9fb; }
 
-/* =========================================================
-   Sobre
-   ========================================================= */
 .sobre-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -343,9 +323,6 @@ section { padding: 112px 0; }
     color: var(--muted);
 }
 
-/* =========================================================
-   Projetos em andamento
-   ========================================================= */
 .projetos { background: var(--surface); }
 
 .projetos-grid {
@@ -446,9 +423,6 @@ section { padding: 112px 0; }
     color: var(--muted);
 }
 
-/* =========================================================
-   Contato
-   ========================================================= */
 .contato-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -490,9 +464,6 @@ section { padding: 112px 0; }
 
 .card .btn { margin-top: auto; }
 
-/* =========================================================
-   Footer
-   ========================================================= */
 .footer {
     padding: 24px 0;
     border-top: 4px solid var(--accent);
@@ -523,9 +494,6 @@ section { padding: 112px 0; }
 
 .to-top:hover { background: var(--white); color: var(--black); }
 
-/* =========================================================
-   Responsivo
-   ========================================================= */
 @media (max-width: 900px) {
     section { padding: 84px 0; }
 

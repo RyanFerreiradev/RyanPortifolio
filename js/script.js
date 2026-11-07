@@ -4,7 +4,6 @@ const navlist = document.querySelector('#navlist');
 const navLinks = document.querySelectorAll('.navlist a');
 const sections = document.querySelectorAll('main section[id]');
 
-/* ---------- Menu mobile ---------- */
 function setMenu(open) {
     navlist.classList.toggle('open', open);
     menuBtn.setAttribute('aria-expanded', open);
@@ -23,7 +22,6 @@ menuBtn.addEventListener('click', () => {
 
 navLinks.forEach(link => link.addEventListener('click', () => setMenu(false)));
 
-/* ---------- Header com borda ao rolar ---------- */
 function onScroll() {
     header.classList.toggle('sticky', window.scrollY > 20);
 }
@@ -31,7 +29,6 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-/* ---------- Link ativo conforme a seção visível ---------- */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) return;

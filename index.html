@@ -16,12 +16,6 @@
 </head>
 <body>
 
-    <!--
-        Idiomas: o texto abaixo é o português (padrão). As traduções ficam em js/i18n.js.
-        Cada elemento com data-i18n="chave" é trocado automaticamente.
-    -->
-
-    <!-- ========== CABEÇALHO ========== -->
     <header class="header">
         <a href="#home" class="logo">Ryan<span>.dev</span></a>
 
@@ -76,7 +70,6 @@
             </div>
         </section>
 
-        <!-- ========== SOBRE ========== -->
         <section class="sobre" id="sobre">
             <div class="container sobre-grid">
                 <div class="sobre-img">
@@ -96,10 +89,7 @@
             </div>
         </section>
 
-        <!-- ========== PROJETOS EM ANDAMENTO ========== -->
-        <!-- Para adicionar um projeto, copie um <article class="projeto">, edite o HTML
-             e inclua as traduções correspondentes em js/i18n.js.
-             O valor de --progress (e data-progress) controla a barra de 0 a 100. -->
+
         <section class="projetos" id="projetos">
             <div class="container">
                 <div class="section-head">
@@ -119,6 +109,7 @@
                         <ul class="stack">
                             <li>API REST</li>
                             <li>SQL</li>
+                            <li>JAVA</li>
                         </ul>
                         <div class="progress" role="progressbar" data-progress="60" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso">
                             <div class="progress-bar" style="--progress: 60%"></div>
@@ -136,6 +127,7 @@
                         <ul class="stack">
                             <li data-i18n="projects.p2.tag">Autenticação</li>
                             <li>JWT</li>
+                            <li>JAVA</li>
                         </ul>
                         <div class="progress" role="progressbar" data-progress="35" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso">
                             <div class="progress-bar" style="--progress: 35%"></div>
@@ -164,8 +156,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- ========== CONTATO ========== -->
+=
         <section class="contato" id="contato">
             <div class="container">
                 <div class="section-head">
@@ -203,7 +194,6 @@
 
     </main>
 
-    <!-- ========== RODAPÉ ========== -->
     <footer class="footer">
         <div class="container footer-inner">
             <p data-i18n="footer.copy">© 2026 Ryan Ferreira. Todos os direitos reservados.</p>
